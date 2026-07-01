@@ -15,6 +15,15 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+def root():
+    return {
+        "message": "Hospital Bulk Processing API is running",
+        "docs_url": "/docs",
+        "health_url": "/health",
+    }
+
+
 app.include_router(hospitals_router, tags=["Hospitals Bulk"])
 
 

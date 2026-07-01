@@ -9,7 +9,6 @@ import uuid
 
 router = APIRouter()
 
-@router.post("/hospitals_bulk")
 @router.post("/hospitals/bulk")
 async def bulk_create_hospitals(file: UploadFile = File(...)):
     if not file.filename.endswith(".csv"):
